@@ -31,9 +31,9 @@ void* pop(STACK* stack);
 stack을 생성할 때 사용할 create_stack(), 스택을 쌓을 때 사용할 push, 데이터를 꺼내고 stack을 지우가 위한 pop 을 정의 => ADT_stack.c 파일에서 함수를 정의  
 
 ## <pre>ADT_stack.c</pre>  
-> [STACK* create_stack()](https://github.com/rlasanggus/Data-structure/tree/master/stack#stack-create_stack)
-> [bool push(STACK* stack, void* in)](https://github.com/rlasanggus/Data-structure/tree/master/stack#bool-pushstack-stack-void-in)
-> [void* pop(STACK* stack)](https://github.com/rlasanggus/Data-structure/tree/master/stack#void-popstack-stack)
+> [STACK* create_stack()](https://github.com/rlasanggus/Data-structure/tree/master/stack#stack-create_stack)  
+> [bool push(STACK* stack, void* in)](https://github.com/rlasanggus/Data-structure/tree/master/stack#bool-pushstack-stack-void-in)  
+> [void* pop(STACK* stack)](https://github.com/rlasanggus/Data-structure/tree/master/stack#void-popstack-stack)  
 
 #### <code>STACK* create_stack()</code>  
 ```c
