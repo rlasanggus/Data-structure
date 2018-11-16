@@ -54,7 +54,6 @@ traverse 함수 세개
 > [bool BST_insert(BST_TREE* tree, int data)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#bool-bst_insertbst_tree-tree-int-data)  
 > [bool BST_delete(BST_TREE* tree, int data)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#bool-bst_deletebst_tree-tree-int-data)  
 > [void BST_print(BST_TREE* tree, int method)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#void-bst_printbst_tree-tree-int-method)  
-> []()  
 ```c
 #include "ADT_tree.h"
 ```  
