@@ -19,3 +19,4 @@ bool add_node_at(LLIST* list, unsigned int index, void* in);
 bool del_node_at(LLIST* list, unsigned int index);
 void* get_data_at(LLIST* list, unsigned int index);
 bool change_data_at(LLIST* list, unsigned int index, void* new_data);
+int find_data(LLIST* list, void* search_data);
