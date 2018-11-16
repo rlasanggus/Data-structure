@@ -98,7 +98,10 @@ _NODE* search_bst(T_NODE* root, int key){
 		return root;
 }
 ```  
-root == NULL 이라면 비어있는 root가 비어 있으므로 검색할 데이터가 없다 따라서NULL을 반환, 만약 검색하고자 하는 데이터 값인 key값이 root -> data값 보다 작다면 현재 root 의 left 쪽 밑에 있으므로 재귀 함수로 root -> left 넣음, 마찬가지로 key값이 root -> data 보다 크다면 오른쪽에 위치함으로 root -> right를 넣어 재귀함수사용, 만약 두 경우가 모두 아니라면 현재 key 값과 현재 root의 data 값이 일치하므로 현재 root 값을 반환  
+root == NULL 이라면 비어있는 root가 비어 있으므로 검색할 데이터가 없다 따라서NULL을 반환  
+만약 검색하고자 하는 데이터 값인 key값이 root -> data값 보다 작다면 현재 root 의 left 쪽 밑에 있으므로 재귀 함수로 root -> left 넣음  
+마찬가지로 key값이 root -> data 보다 크다면 오른쪽에 위치함으로 root -> right를 넣어 재귀함수사용  
+만약 두 경우가 모두 아니라면 현재 key 값과 현재 root의 data 값이 일치하므로 현재 root 값을 반환  
 
 #### <code>T_NODE* add_bst(T_NODE* root, int data)</code>  
 ```c
