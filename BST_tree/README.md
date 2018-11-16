@@ -42,6 +42,19 @@ traverse 함수 세개
 노드 추가, 삭제, 출력하는 함수  
 
 ## <pre>ADT_tree.c</pre>  
+> [BST_TREE* create_bst_tree()](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#bst_tree-create_bst_tree)  
+> [T_NODE* find_smallest_node(T_NODE* root)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#t_node-find_smallest_nodet_node-root)  
+> [T_NODE* find_largest_node(T_NODE* root)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#t_node-find_largest_nodet_node-root)  
+> [T_NODE* search_bst(T_NODE* root, int key)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#t_node-search_bstt_node-root-int-key)  
+> [T_NODE* add_bst(T_NODE* root, int data)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#t_node-add_bstt_node-root-int-data)  
+> [T_NODE* delete_bst(T_NODE* root, int data, bool* success)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#t_node-delete_bstt_node-root-int-data-bool-success)  
+> [void traverse_inorder(T_NODE* root)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#void-traverse_inordert_node-root)  
+> [void traverse_postorder(T_NODE* root)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#void-traverse_postordert_node-root)  
+> [void traverse_preorder(T_NODE* root)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#void-traverse_preordert_node-root)  
+> [bool BST_insert(BST_TREE* tree, int data)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#bool-bst_insertbst_tree-tree-int-data)  
+> [bool BST_delete(BST_TREE* tree, int data)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#bool-bst_deletebst_tree-tree-int-data)  
+> [void BST_print(BST_TREE* tree, int method)](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree#void-bst_printbst_tree-tree-int-method)  
+> []()  
 ```c
 #include "ADT_tree.h"
 ```  
