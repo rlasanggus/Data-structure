@@ -130,7 +130,8 @@ T_NODE* add_bst(T_NODE* root, int data){
 	}
 }
 ```  
-T_NODE의 크기만큼 동적할당 후 T_NODE*형으로 형변환 한 값을 new_node에 저장, 만약 메모리가 할당되지않으면 NULL을 반환, 할당이 됬다면 left와 right값을 초기화 하고, new_node의 data값에 추가하고자 하는 data값을 넣음  
+T_NODE의 크기만큼 동적할당 후 T_NODE*형으로 형변환 한 값을 new_node에 저장  
+만약 메모리가 할당되지않으면 NULL을 반환, 할당이 됬다면 left와 right값을 초기화 하고, new_node의 data값에 추가하고자 하는 data값을 넣음  
 data값과 root -> data 값을 비교하며 새로운 data가 들어갈 위치까지 내려간 후 저장(if, else 내부의 add_bst 재귀함수에서 tree의 맨 밑까지 내려갔다면 root -> right 와 left는 NULL이므로 new_node를 반환하게 되고, 그 값이 root의 left나 right 값으로 들어가게됨)  
 
 #### <code>T_NODE* delete_bst(T_NODE* root, int data, bool* success)</code>  
