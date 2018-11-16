@@ -5,7 +5,12 @@
 
 ## <pre>ADT_queue.h</pre>  
 ## <pre>ADT_queue.c</pre>  
-
+> [QUEUE* create_queue()](https://github.com/rlasanggus/Data-structure/tree/master/queue#queue-create_queue)  
+> [bool enqueue(QUEUE* queue, void* in)](https://github.com/rlasanggus/Data-structure/tree/master/queue#bool-enqueuequeue-queue-void-in)  
+> [void* dequeue(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-dequeuequeue-queue)  
+> [void* queue_hook_front(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-queue_hook_frontqueue-queue)  
+> [void* queue_hook_rear(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-queue_hook_rearqueue-queue)  
+> [void destroy_queue(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-destroy_queuequeue-queue)  
 #### <code>QUEUE* create_queue()</code>  
 #### <code>bool enqueue(QUEUE* queue, void* in)()</code>  
 #### <code>void* dequeue(QUEUE* queue)</code>  
