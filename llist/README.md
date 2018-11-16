@@ -40,6 +40,12 @@ LLIST에 데이터를 추가할 때 사용할 add_node_at
 
 
 ## <pre>ADT_llist.c</pre>  
+> [LLIST* create_list(int(*c_func)(void*x, void*y), void(*p_func)(void* x))](https://github.com/rlasanggus/Data-structure/tree/master/llist#llist-create_listintc_funcvoidx-voidy-voidp_funcvoid-x)  
+> [bool add_node_at(LLIST* list, unsigned int index, void* in)](https://github.com/rlasanggus/Data-structure/tree/master/llist#bool-add_node_atllist-list-unsigned-int-index-void-in)  
+> [bool del_node_at(LLIST* list, unsigned int index)](https://github.com/rlasanggus/Data-structure/tree/master/llist#bool-del_node_atllist-list-unsigned-int-index)  
+> [void* get_data_at(LLIST* list, unsigned int index)](https://github.com/rlasanggus/Data-structure/tree/master/llist#void-get_data_atllist-list-unsigned-int-index)  
+> [bool change_data_at(LLIST* list, unsigned int index, void* new_data)](https://github.com/rlasanggus/Data-structure/tree/master/llist#bool-change_data_atllist-list-unsigned-int-index-void-new_data)  
+> [int find_data(LLIST* list, void* search_data)](https://github.com/rlasanggus/Data-structure/tree/master/llist#int-find_datallist-list-void-search_data)  
 ```c
 #include "ADT_llist.h"
 #include <stdlib.h>
