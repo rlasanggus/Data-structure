@@ -30,3 +30,16 @@ push(STACK* stack, void* in){
 
 
 }
+
+void* pop(STACK* stack){
+	if(stack -> count=0)
+		return NULL;
+	else{
+		STACK_NODE* temp = stack -> top;
+		void* data_out = stack->top->data_ptr;
+		stack->top = stack->top->link;
+		free(temp);
+		(stack->count)--;
+		return data_out;
+	}
+}
