@@ -1,4 +1,7 @@
 # Queue  
+![image](https://user-images.githubusercontent.com/43701183/48624026-c61bd080-e9ee-11e8-96cb-6e2186c41d81.png)  
+![image](https://user-images.githubusercontent.com/43701183/48624053-d338bf80-e9ee-11e8-9ddd-5a818672e2c1.png)  
+
 
 ## <pre>ADT_queue.h</pre>  
 ## <pre>ADT_queue.c</pre>  
