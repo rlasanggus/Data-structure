@@ -1,4 +1,4 @@
-# Stack ADT(Absract Data Type)  
+# Stack_ADT(Absract Data Type)  
 
 ![image](https://user-images.githubusercontent.com/43701183/48619684-a2518e00-e9e0-11e8-9bfd-0d7cd056020e.png)  
 ![image](https://user-images.githubusercontent.com/43701183/48620019-d8434200-e9e1-11e8-9b89-d1387fa7dcce.png)  
