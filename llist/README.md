@@ -36,7 +36,7 @@ LLIST에 데이터를 추가할 때 사용할 add_node_at
 노드를 삭제할 때 사용할 del_node_at  
 노드에 저장된 데이터를 가져올 때 사용할 get_data_at  
 노드에 저장된 데이터값을 새로운 데이터로 바꿀때 사용할 chage_data_at  
-노드에 저장된 데이터를 찾을 find_data  
+노드에 저장된 데이터를 찾을 find_data(index값을 return)  
 
 
 ## <pre>ADT_llist.c</pre>  
