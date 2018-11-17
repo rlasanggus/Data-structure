@@ -247,5 +247,56 @@ void print_arc(void* x){
 ```
 해당 arc에 저장되어있는 to vertex값을 출력  
 #### <code>void print_arc_all(GRAPH* graph)</code>  
+```c
+void print_arc_all(GRAPH* graph){
+	NODE* vertex_cur = graph -> vertex_list -> front;
+	while(vertex_cur != NULL){
+		printf("vertex: %d\n", (char)((VERTEX*)vertex_cur -> data_ptr)->data);
+		NODE* pos_arc = ((VERTEX*)(vertex_cur -> data_ptr)) -> arc_list -> front;
 
+		while(pos_arc != NULL){
+			print_arc(pos_arc -> data_ptr);
+			pos_arc = pos_arc -> next;
+		}
+		vertex_cur = vertex_cur -> next;
+	}
+}
+```
+vertex_cur를 graph의 vertex_list의 front에 위치시킴  
+현재 vertex_cur에 저장된 데이터를 출력  
+vertex_cur의 arc_list의 front에 위치시킴  
+arc_list에 저장되어있는 연결되어있는 vertex들을 print_arc함수를 이용 출력  
+vertex_cur을 이동시키며 graph에 저장되어있는 vertex마다 연결되어있는 vertex들 출력  
 #### <code>bool destroy_graph(GRAPH* graph)</code>  
+```c
+bool destroy_graph(GRAPH* graph){
+	if(graph == NULL){
+		printf("graph is empty graph\n");
+		return false;
+	}
+```  
+지우고자하는 graph가 NULL 즉 존재하지않으면 false  
+```c
+	LLIST* del_vertex = graph -> vertex_list;
+	LLIST* del_arc;
+
+	while(get_data_at(del_vertex, 0) != NULL){
+		del_arc = ((VERTEX*)get_data_at(del_vertex, 0)) -> arc_list;
+
+		while(get_data_at(del_arc, 0) != NULL){
+			del_node_at(del_arc, 0);
+		}
+
+		del_node_at(del_vertex, 0);
+	}
+
+	return true;
+}
+```
+del_vertex에 graph에 저장되어있는 vertex_list의 주소값을 저장  
+del_arc를 정의  
+while(get_data_at(del_vertex, 0) != NULL) 즉 del_vertex인 graph의 vertex_list의 첫번째 인덱스의 갑이 존재하지 않을 때인 vertex_list 안에 node가 존재하지않을때까지인 모든 노드가 지워질때 까지  
+del_arc즉 현재 del_vertex가 가지고 있는 arc_list의 첫번째 인덱스값이 존재하지않는 연결되어있는 arc들을 모두 삭제할때 까지 arc들을 삭제  
+del_vertex의 첫번째 인덱스의 node를 삭제  
+while문을 빠져나오면 graph에 존재하는 모든 vertex와 arc들이 삭제된 상태  
+true 값을 return  
