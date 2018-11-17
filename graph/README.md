@@ -46,14 +46,14 @@ bool destroy_graph(GRAPH* graph);
 ```
 GRAPH를 생성할 때 사용할 create_graph  
 vertex를 추가할 때 사용할 g_insert_vertex  
-두개의 vertex를 비교할 compare_vertex  
+vertex두개를 비교할 compare_vertex  
 vertex값을 출력할 print_vertex  
-모든 vertex값을 출력할 print_vertex_all  
+vertex들의 값을 모두 출력할 print_vertex_all  
 vertex를 삭제할 g_delete_vertex  
 arc를 추가할 때 사용할 g_insert_arc  
-두개의 arc를 비교할 compare_arc  
+arc두개를 비교할 compare_arc  
 arc값을 출력할 print_arc  
-모든 arc값을 출력할 print_arc_all  
+arc들의 값을 출력할 print_arc_all  
 GRAPH를 삭제할 destroy_graph  
 
 
