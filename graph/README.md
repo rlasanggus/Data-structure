@@ -1,4 +1,9 @@
 # ADT_Graph  
+![image](https://user-images.githubusercontent.com/43701183/48654149-e3cc5280-ea4d-11e8-9cec-972a719d60aa.png)  
+![image](https://user-images.githubusercontent.com/43701183/48654156-ec248d80-ea4d-11e8-8c87-df3e674f72f8.png)
+![image](https://user-images.githubusercontent.com/43701183/48654162-f3e43200-ea4d-11e8-9d25-04d051aaba94.png)  
+
+
 
 ## <pre>ADT_stack.h</pre>  
 >[ADT_llist.h](https://github.com/rlasanggus/Data-structure/tree/master/llist)  
