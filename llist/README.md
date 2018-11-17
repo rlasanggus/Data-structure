@@ -130,6 +130,72 @@ pos을 현재 front위치에 위치시킨 후 한칸씩 뒤로 이동시키며 �
 
 
 #### <code>bool del_node_at(LLIST* list, unsigned int index)</code>  
+```c
+bool del_node_at(LLIST* list, unsigned int index){
+	if(list->count == 0) return false;
+	else if(index>=list->count) return false;
+```  
+count 값이 0이라면, 데이터가 없는 list임으로 지울 수 있는 데이터가 없음 false 반환  
+```c
+if(list -> count == 1){
+		free(list->front);
+		list -> front = NULL;
+		list -> rear = NULL;
+		list -> count = 0;
+		return true;
+	}
+```  
+count 값이 1이라면 하나의 데이터가 있음으로 그 데이터가 사라지면 모든 값은 초기화시켜야함  
+```c
+int iter_i = 0;
+	list -> pos = list -> front;
+	NODE* pre = NULL;
+	while(iter_i != index){
+		pre = list -> pos;
+		list -> pos = list -> pos -> next;
+		iter_i++;
+	}
+```  
+지우고자 하는 인덱스 값으로 이동  
+```c
+	if(index==0){
+		list -> front = list -> pos -> next;
+		free(list->pos);
+		(list -> count)--;
+		list -> pos = NULL;
+		return true;
+	}
+```  
+index = 0 라면, 현재 front에위치하는 데이터. 따라서 이 데이터가 사라진다면, 현재 index=1의 자리가 fornt가 됨으로 fornt값 최신화  
+지구고자 하는 데이터 메모리 반환, count 감소, pos 초기화 true반환 후 함수종료  
+```c
+	if(index==(list->count - 1)){
+		list -> rear = pre;
+		pre -> next = NULL;
+		free(list -> pos);
+		list -> pos = NULL;
+		(list -> count)--;
+		return true;
+```  
+index = count - 1 값이라면, 현재 list의 rear에 위치하는 데이터 임으로, rear값을 최신화 후 제거
+```c
+	}else{
+		pre -> next = list->pos->next;
+		free(list->pos);
+		list -> pos = NULL;
+		(list->count)--;
+		return true;
+	}
+```  
+index=0, index=count-1이 아니라면  
+지우고자 하는 데이터의 앞의 위치의 노드의 next값은 지우고자 하는 데이터의 next값이 되어야 함으로 next값을 최신화  
+이후 메모리 반환후 count감소, true값 반환  
+```c
+
+	return false;
+}
+```  
+위의 모든 case가 아니라면, 또다른 case는 없으므로 여기까지왔다면 오류가 발생. return false  
 #### <code>void* get_data_at(LLIST* list, unsigned int index)</code>  
 ```c
 void* get_data_at(LLIST* list, unsigned int index){
