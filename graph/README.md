@@ -28,7 +28,7 @@ typedef struct{
 ```  
 GRAPH는 vertex들의 정보를 가져야함.  
 linked_list를 이용하여 vertex를 list로 저장  
-## <pre>ADT_stack.h</pre>  
+## <pre>ADT_stack.</pre>  
 >>[ADT_llist.c](https://github.com/rlasanggus/Data-structure/tree/master/llist)  
 
 
