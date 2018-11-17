@@ -16,7 +16,7 @@
 * [BST_Tree](https://github.com/rlasanggus/Data-structure/tree/master/BST_tree)  
   * Root와 left, rigtht node로 구성.  
   * Tree의 모든 자료는 달라야한다는 제약  
-  * 자료의 탐색, 삽입, 삭제가 효율적
+  * 자료의 탐색, 삽입, 삭제가 효율적  
 * [Graph](https://github.com/rlasanggus/Data-structure/tree/master/graph)  
  * 비선형 자료구조  
  * vertex(정점)과 vertex사이의 edge(간선)으로 이루어짐  
