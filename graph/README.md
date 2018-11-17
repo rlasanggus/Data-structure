@@ -135,12 +135,117 @@ void print_vertex_all(GRAPH* graph){
 ```  
 vertex는 graph에 list 형태로 저장되어 있음으로 list의 처음부터 끝까지 지나가며 그 값들을 print_vertex함수를 이용하여 출력  
 #### <code>bool g_delete_vertex(GRAPH* graph, int data)</code>  
+```c
+bool g_delete_vertex(GRAPH* graph, int data){
+	if(graph -> vertex_list -> count == 0)
+		return false;
+```
+graph의 vertex_list의 count 즉 graph에 저장되어있는 vertex개수가 0개라면 vertex를 지우겠다는것이 모순임으로 false 반환  
+```c
+	bool flag = false;
 
+	VERTEX del_vertex;
+	del_vertex.data = data;
+	del_vertex.arc_list = NULL;
+	int del_index = find_data(graph -> vertex_list, &del_vertex);
+	if(del_index == -1)
+		return flag;
+```  
+flag에 false를 저장  
+del_vertex를 정의  
+Linked_list의 find data를 이용 graph의 vertex_list안에 해당 데이터가 있는지 확인  
+없다면 -1반환됨으로 flag(false)값 반환  
+```c
+	ARC del_arc;
+	del_arc.to_vertex = &del_vertex;
+	NODE* pos_vertex = graph -> vertex_list -> front;
+
+	while(pos_vertex != NULL){
+		del_index = find_data(((VERTEX*)(pos_vertex -> data_ptr)) -> arc_list, &del_arc);//error return -1
+		if(del_index != -1)
+			flag = del_node_at(((VERTEX*)(pos_vertex -> data_ptr)) -> arc_list, del_index);
+		pos_vertex = pos_vertex -> next;
+	}
+	return flag;
+}
+```  
+만약 있다면, 해당 vertex와 연결되어있는 arc들을 모두 제거해줘야함으로 find_data를 이용하여 graph의 모든 vertex를 지나가며 지우고자 하는 vertex와 연결되어있는 arc가 있는지 검색 후 있다면 해당 arc들을 삭제  
 
 #### <code>bool g_insert_arc(GRAPH* graph, int from, int to)</code>  
+```c
+bool g_insert_arc(GRAPH* graph, int from, int to){
+	VERTEX tmp_vertex1;
+	tmp_vertex1.data = from;
+	tmp_vertex1.arc_list = NULL;
 
+	int vertex_loc = find_data(graph -> vertex_list, &tmp_vertex1);
+	if(vertex_loc == -1){
+		printf("from_vertex %c: not found\n", (char)from);
+	}
+	
+	VERTEX* from_vertex = (VERTEX*)get_data_at(graph -> vertex_list, vertex_loc);
+```  
+from vertex를 저장할 vertex1을 정의  
+from vertex가 graph안에 존재하는지 find_data함수를 이용하여 검색 
+없다면 find_data가 -1을 반환  
+존재한다면 from_vertex의 정보를 Linked_list의 get_data_at을 사용하여 가져옴  
+
+```c
+	VERTEX tmp_vertex2;
+	tmp_vertex2.data = to;
+	tmp_vertex2.arc_list = NULL;
+
+	vertex_loc = find_data(graph -> vertex_list, &tmp_vertex2);
+	if(vertex_loc == -1){
+		printf("to_vertex %c: not fonund\n", (char)to);
+		return false;
+	}
+	
+	VERTEX* to_vertex = (VERTEX*)get_data_at(graph -> vertex_list, vertex_loc);
+```
+to vertex를 저장할 vertex2를 정의
+to vertex가 graph안에 존재하는지 find_data함수를 이용하여 검색  
+없다면 find_data가 -1을 반환  
+존재한다면 to_vertex의 정보를 Linked_list의 get_data_at을 사용하여 가져옴  
+
+```c
+	ARC* new_arc = (ARC*)malloc(sizeof(ARC));
+	new_arc -> to_vertex = to_vertex;
+
+	int arc_loc = find_data(from_vertex -> arc_list, new_arc);
+	if(arc_loc != -1){
+		free(new_arc);
+		return false;
+	}
+
+	return add_node_at(
+		from_vertex -> arc_list, 
+		from_vertex -> arc_list -> count, 
+		new_arc);
+}
+```
+from vertex와 to vertex가 모두 존재했음으로 그 사이를 연결할 arc를 정의  
+arc는 to vertex값을 가짐  
+from vertex의 arc_list로부터 to vertex와 연결되어있는 arc가 있는지 검색  
+존재한다면 연결할 필요없으므로 false 반환  
+존재하지 않는다면 from vertex의 arc list에 Linked_list의 add_node_at 함수를 사용 새로운 arc를 추가  
 #### <code>int compare_arc(void* x, void* y)</code>  
+```c
+int compare_arc(void* x, void* y){
+	ARC* left = (ARC*)x;
+	ARC* right = (ARC*)y;
+	return compare_vertex(left -> to_vertex, right -> to_vertex);
+}
+```  
+list의 find data와 비슷한 형식으로, 하나의 arc를 left에 또다른 하나의 arc를 right에 저장 후 left의 데이터에서 right의 데이터를 뺌. 만약 같다면 0이 반환될것이고 다르다면 0이 아닌 값을 반환  
 #### <code>void print_arc(void* x)</code>  
+```c
+void print_arc(void* x){
+	ARC* arc = (ARC*)x;
+	printf("		-> : %c\n", (char)(arc -> to_vertex -> data));
+}
+```
+해당 arc에 저장되어있는 to vertex값을 출력  
 #### <code>void print_arc_all(GRAPH* graph)</code>  
 
 #### <code>bool destroy_graph(GRAPH* graph)</code>  
