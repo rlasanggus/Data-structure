@@ -31,24 +31,30 @@ linked_list를 이용하여 vertex를 list로 저장
 ```c
 GRAPH* create_graph();
 
+bool g_insert_vertex(GRAPH* graph, int data);
 int compare_vertex(void* x, void*y);
 void print_vertex(void* x);
-
-int compare_arc(void* x, void* y);
-void print_arc(void* x);
-
-bool g_insert_vertex(GRAPH* graph, int data);
 void print_vertex_all(GRAPH* graph);
+bool g_delete_vertex(GRAPH* graph, int data);
 
 bool g_insert_arc(GRAPH* graph, int from, int to);
+int compare_arc(void* x, void* y);
+void print_arc(void* x);
 void print_arc_all(GRAPH* graph);
 
-bool g_delete_vertex(GRAPH* graph, int data);
 bool destroy_graph(GRAPH* graph);
 ```
- 
-
-
+GRAPH를 생성할 때 사용할 create_graph  
+vertex를 추가할 때 사용할 g_insert_vertex  
+두개의 vertex를 비교할 compare_vertex  
+vertex값을 출력할 print_vertex  
+모든 vertex값을 출력할 print_vertex_all  
+vertex를 삭제할 g_delete_vertex  
+arc를 추가할 때 사용할 g_insert_arc  
+두개의 arc를 비교할 compare_arc  
+arc값을 출력할 print_arc  
+모든 arc값을 출력할 print_arc_all  
+GRAPH를 삭제할 destroy_graph  
 
 
 ## <pre>ADT_graph.c</pre>  
