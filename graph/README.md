@@ -47,7 +47,7 @@ bool g_delete_vertex(GRAPH* graph, int data);
 bool destroy_graph(GRAPH* graph);
 ```
 * [GRAPH* create_graph()](https://github.com/rlasanggus/Data-structure/tree/master/graph#graph-create_graph)  
-	* sdf
+  
 * [int compare_vertex(void* x, void*y)](https://github.com/rlasanggus/Data-structure/tree/master/graph#int-compare_vertexvoid-x-voidy)  
 * [void print_vertex(void* x)](https://github.com/rlasanggus/Data-structure/tree/master/graph#void-print_vertexvoid-x)  
 * [int compare_arc(void* x, void* y)](https://github.com/rlasanggus/Data-structure/tree/master/graph#int-compare_arcvoid-x-void-y)  
