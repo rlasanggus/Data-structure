@@ -247,7 +247,30 @@ count값이 0이면 바꿀 데이터가 없으므로 false, index개수는 0~cou
 pos을 front로 초기화 한 후, 한칸씩 뒤로 이동시키며 index위치로 이동, 이동 후 pos의 데이터주소값을 새로운 데이터주소로 변환  
 
 #### <code>int find_data(LLIST* list, void* search_data)</code>  
+```c
+int find_data(LLIST* list, void* search_data){
+	list -> pos = list -> front;
+	int cmp_result, left, right;
+	int iter_i=0;
+	while(list -> pos != NULL){
+		left = *(int*)(list -> pos -> data_ptr);
+		right = *(int*)search_data;
+		cmp_result = left - right;
+		if(cmp_result == 0)
+			return iter_i;
 
+		list -> pos = list -> pos -> next;
+		iter_i++;
+	}
+	return -1;
+}
+```  
+front부터 시작.  
+left엔 현재pos에 위치하는 데이터, right엔 검색하고자 하는 데이터  
+cmp_result = left - right 값이 같다면 0일것이고, 다르다면 0이아님  
+cmp_result == 0라면, iter_i 즉 index값을 반환  
+pos, iter_i 위치 업데이트 후 rear까지 반복  
+만약 while문 안에서 함수가 끝나지 않았다면, 데이터가 없으므로 -1을 반환  
 
 
 
