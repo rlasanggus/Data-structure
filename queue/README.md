@@ -27,11 +27,17 @@ void* queue_hook_front(QUEUE* queue);
 void* queue_hook_rear(QUEUE* queue);
 void destroy_queue(QUEUE* queue);
 ```  
+[QUEUE* create_queue()](https://github.com/rlasanggus/Data-structure/tree/master/queue#queue-create_queue)
 queue를 생성할 때 사용할 create_queue  
+[bool enqueue(QUEUE* queue, void* in)](https://github.com/rlasanggus/Data-structure/tree/master/queue#bool-enqueuequeue-queue-void-in)
 queue에 데이터를 넣을 enqueue  
+[void* dequeue(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-dequeuequeue-queue)
 queue에서 데이터를 꺼낼 dequeue  
+[void* queue_hook_front(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-queue_hook_frontqueue-queue)
 queue의 front의 데이터를 읽어오는 queue_hook_front  
+[void* queue_hook_rear(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-queue_hook_rearqueue-queue)
 queue의 rear의 데이터를 읽어오는 queue_hook_rear  
+[void destroy_queue(QUEUE* queue)](https://github.com/rlasanggus/Data-structure/tree/master/queue#void-destroy_queuequeue-queue) 
 queue를 삭제하는 destroy_queue  
 
 
