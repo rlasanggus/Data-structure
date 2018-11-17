@@ -7,6 +7,27 @@
 
 ## <pre>ADT_stack.h</pre>  
 >>[ADT_llist.h](https://github.com/rlasanggus/Data-structure/tree/master/llist)  
+```c
+typedef struct vertex{
+	int data;
+	LLIST* arc_list;
+}VERTEX;
+```
+VERTEX에서 다른 vertex로 연결되는 길인 arc들을  list로 저장.  
+```c
+typedef struct arc{
+	VERTEX* to_vertex;
+}ARC;
+```  
+arc의 구조체 정의. arc는 목적지가 되는 vertex의 주소를 가져야함.  
+출발지 vertex의 arc_list안에 arc가 저장되기때문에 출발지의 정보는 출발지 vertex가 가지고있음  
+```c
+typedef struct{
+	LLIST* vertex_list;	
+}GRAPH;
+```  
+GRAPH는 vertex들의 정보를 가져야함.  
+linked_list를 이용하여 vertex를 list로 저장  
 ## <pre>ADT_stack.h</pre>  
 >>[ADT_llist.c](https://github.com/rlasanggus/Data-structure/tree/master/llist)  
 
