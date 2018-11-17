@@ -62,6 +62,7 @@ GRAPH를 삭제할 destroy_graph
 
 
 [GRAPH* create_graph()](https://github.com/rlasanggus/Data-structure/tree/master/graph#graph-create_graph)  
+
 [bool g_insert_vertex(GRAPH* graph, int data)](https://github.com/rlasanggus/Data-structure/tree/master/graph#bool-g_insert_vertexgraph-graph-int-data)  
 [int compare_vertex(void* x, void*y)](https://github.com/rlasanggus/Data-structure/tree/master/graph#int-compare_vertexvoid-x-voidy)  
 [void print_vertex(void* x)](https://github.com/rlasanggus/Data-structure/tree/master/graph#void-print_vertexvoid-x)  
