@@ -13,7 +13,7 @@ typedef struct node{
 
 } STACK_NODE;
 ```  
-stack 에서 데이터를 가리키는 포인터값을 저장할 data_ptr, 다음 노드의 주소 값을 가리킬 링크 값을 저장할 link 를 정의, 구조체 node 를 STACK_NODE로 정의(데이터에 어떤 변수가 올 지 모름으로 void* 형으로 정의)  
+stack 에서 데이터를 가리키는 포인터값을 저장할 data_ptr, 다음 노드의 주소 값을 가리킬 링크 값을 저장할 link 를 정의, 구조체 node 를 STACK_NODE로 정의(데이터에 어떤 변수가 올지 모름으로 void* 형으로 정의)  
 ```c
 typedef struct {
 
